@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+      }
+
+      .container {
+         width: 600px;
+         margin: 0 auto;
+      }
+
+      form {
+         width: 100%;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      .form-row {
+         display: flex;
+         margin-bottom: 10px;
+      }
+
+      .form-row .form-group {
+         flex: 1;
+         margin-right: 10px;
+      }
+
+      .form-row .form-group:last-child {
+         margin-right: 0;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      input[type="tel"],
+      select {
+         width: 100%;
+         padding: 8px;
+         margin-bottom: 10px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+      }
+
+      input[type="password"],
+
+      input[type="email"] {}
+
+      .form-row .form-group.radio-group {
+         display: flex;
+         align-items: center;
+      }
+
+      .form-row .form-group.radio-group label {
+         margin-right: 10px;
+      }
+
+      input[type="radio"] {
+         margin-right: 5px;
+      }
+
+      input[type="submit"] {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+      }
+
+      /* input[type="submit"]:hover {
+         background-color: #45a049;
+      } */
+      body {
+         font-family: Arial, sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+      }
+
+
+      input[type="submit"] {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         display: block;
+         margin: 0 auto;
+      }
+
+      .create-account {
+         text-align: center;
+         margin-bottom: 10px;
+      }
+
+      #password-toggle {
+         float: right;
+         cursor: pointer;
+      }
+
+      #password-toggle:hover {
+         text-decoration: underline;
+      }
+
+      .container {
+         width: 600px;
+         margin: 0 auto;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         padding: 20px;
+      }
+
+
+      .form-row .form-group {
+         flex: 1;
+         margin-right: 10px;
+      }
+
+      .form-row .form-group:last-child {
+         margin-right: 0;
+      }
+
+      .form-row .form-group.password-group {
+         flex: 1;
+         margin-right: 10px;
+         width: calc(50% - 5px);
+      }
+
+      .form-row .form-group.password-group:last-child {
+         margin-right: 0;
+      }
+   </style>
+   <script>
+      function togglePassword() {
+         var passwordInput = document.getElementById("password");
+         var passwordToggle = document.getElementById("password-toggle");
+
+         if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordToggle.innerHTML = "Hide";
+         } else {
+            passwordInput.type = "password";
+            passwordToggle.innerHTML = "Show";
+         }
+      }
+   </script>
+</head>
+
+<body>
+   <div class="container">
+      <div class="create-account">
+         <h2>Create an Account</h2>
+      </div>
+
+      <form action="signup.php" method="post">
+         <div class="form-row">
+            <div class="form-group">
+
+               <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+               <input type="email" id="email" name="email" required placeholder="Your E-Mail">
+            </div>
+         </div>
+
+         <div class="form-row">
+            <div class="form-group password-group">
+               <input type="password" id="password" name="password" required placeholder="Password">
+               <span id="password-toggle" onclick="togglePassword()">Show</span>
+            </div>
+         </div>
+
+         <div class="form-row">
+            <div class="form-group">
+               <input type="number" id="age" name="age" required placeholder="Your Age">
+            </div>
+            <div class="form-group">
+               <select id="country" name="country" required>
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="UK">UK</option>
+                  <option value="Australia">Australia</option>
+               </select>
+            </div>
+         </div>
+
+         <div class="form-row">
+            <div class="form-group">
+               <input type="tel" id="phone" name="phone" required placeholder="Yoyr Number">
+            </div>
+            <div class="form-group radio-group">
+               <label for="gender">Gender:</label>
+               <label for="male">Male</label>
+               <input type="radio" id="male" name="gender" value="male" required>
+               <label for="female">Female</label>
+               <input type="radio" id="female" name="gender" value="female" required>
+            </div>
+         </div>
+         <input type="submit" value="Sign Up">
+      </form>
+   </div>
+</body>
+
+</html>
